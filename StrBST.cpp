@@ -85,10 +85,12 @@ StrBSTNode *_delValueSB(StrBSTNode *bst, const char *value){
         }
         else if(bst->left == NULL){
             StrBSTNode *temp = bst->right;
+	    free(bst);
             return temp;
         }
         else if(bst->right == NULL){
             StrBSTNode *temp = bst->left;
+	    free(bst);
             return temp;
         }
         StrBSTNode *temp = minvalue(bst->right);
