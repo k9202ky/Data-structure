@@ -90,16 +90,6 @@ int getHeight(Treenodeptr node){
 	return (h_l>h_r)?h_l+1:h_r+1;
 }
 
-int getDepth(Treenodeptr node){
-	int h_l,h_r;
-	if(node==NULL){
-		return -1;
-	}
-	h_l = getDepth(node->left);
-	h_r = getDepth(node->right);
-	return (h_l>h_r)?h_l+1:h_r+1;
-}
-
 int main(){
 	FILE *in;
 	Treenodeptr root;
@@ -130,6 +120,5 @@ int main(){
 	printf("\n");
 	printf("Height: %d",getHeight(root));
 	printf("\n");
-	printf("Depth: %d",getDepth(root));
 	return 0;
 }
